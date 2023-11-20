@@ -19,6 +19,7 @@ print("Waiting for connection, yo")
 
 def threaded_client(conn):
   
+  conn.send(str.encode("Connected, honey"))
   reply = ""
   while True:
     try:
@@ -36,6 +37,8 @@ def threaded_client(conn):
       conn.sendall(str.encode(reply))
     except:
       break
+  print("Connection Gonzo")
+  conn.close()
 
 
 
